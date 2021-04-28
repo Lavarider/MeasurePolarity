@@ -86,8 +86,8 @@ def get_friends(user, cursor, i=1, total_friends=None):
 			if int(friendcount)>3:
 				adsflkj#purposely gibberish to stop program from taking super long
 
-			temp = connection.get_friends_ids(screen_name=user, count=5000, cursor=cursor)  # Returns dictionary of cursors and IDs, with IDs as a list of integers
-			for entry in temp['ids']:  # Write each ID to file.  I have chosen to write as an edgelist.
+			temp = connection.get_friends_ids(screen_name=user, count=5000, cursor=cursor)  
+			for entry in temp['ids']:  
 				with open(r'C:\Users\User\Desktop\FriendsOfPeopleFolder/FriendsOf_' + user + '.txt', 'a') as f:
 					#f.write(user + ',')
 					f.write(str(entry) + '\n')  # Each ID is an integer, I make a string in order to write the newline string on the same line of code.
